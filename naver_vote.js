@@ -7,9 +7,13 @@ var nightmare = Nightmare({
     y: 0,
     dock: true
 });
+
 // jquery
 var window = require("jsdom").jsdom().defaultView;
 var $ = require("jquery")( window );
+
+
+clearCache();
 
 
 
@@ -18,6 +22,7 @@ var url_kin = "http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=110803&docId=27
 var h;
 
 nightmare
+    .clearCache()
     .goto('http://www.naver.com')                 // main page
     .click("#login .lg_global_btn")
     .type('input[name="id"]', 'masarapsisig')
@@ -53,3 +58,17 @@ nightmare
     });
 
 
+
+
+function clearCache() {
+    nightmare.action('clearCache',
+        function(name, options, parent, win, renderer, done) {
+            parent.respondTo('clearCache', function(done) {
+            win.webContents.session.clearCache(done);
+        });
+        done();
+        },
+        function(done) {
+            this.child.call('clearCache', done);
+        });
+}
