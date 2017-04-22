@@ -54,9 +54,10 @@ naver_id <=> vote_relation <=> vote_link
 * ip 가 philippines 이면 필리핀 아이디로 접속한다.
 
 
-### vote_link
+### naver_vote
 
-* type 이 좋아요, 
+* link 지식인 주소
+* vote 는 Y 이면 공감, N 이면 비 공감
 
 
 # For Developers
