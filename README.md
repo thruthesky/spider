@@ -1,6 +1,24 @@
 
 
+# Install
+
+* git clone https://github.com/thruthesky/spider
+* npm install --verbose
+* node spider.js
+
+
 # TODO
+
+## .bat 로 숏컷 생성.
+
+## order.txt 에 동작 방식을 설명한다.
+
+예를 들어 네이버 공감을 하는 경우, 아래와 같이 하면 모든 아이디가 한번씩 투표한다.
+
+url: .....
+vote: Y
+
+
 
 ## 만달루용에 심카드 많음.
 
@@ -36,6 +54,19 @@ you can run both together.
 
 
 # 네이버 공감
+
+네이버 공감은, IP 변경이 필요하다. 유료 HideMyAss 를 설치한다.
+
+그리고 그 경로를 naver_vote.js 의 hideMyAssPath 에 지정한다.
+
+## 사용법
+
+1. HideMyAss 2.x 대 버전을 실행
+
+    * 주의 : 이 때 경로는 반드시 c:\Program Files (x86)\HMA! Pro VPN\bin\HMA! Pro VPN.exe 이어야 한다.
+        그래야 Node.js 에서 실행을 할 수 있다.
+
+2. node naver_vote.js 를 실행.
 
 ## DB 구조
 
