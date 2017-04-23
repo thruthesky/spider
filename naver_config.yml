@@ -1,0 +1,9 @@
+# 실행 옵션
+show window: n            # (y/n) 웹 페이지 창을 보일지 말지.
+start after: 20           # (초) 인터넷 속도에 따라서 IP 가 늦게 변경 될 수 있으므로 충분한 시간이 필요.
+start after ip changed: y # (y/n) 이 값이 y 이면, 'start after' 는 무시 됨. 'start after' 가 정확하지 않으므로 실행 속도가 느려 질 수 있는데, IP 변경되자 마자 최대한 빠르게 실행 가능하게 하는 것. 
+                          # 프로그램 내부적으로 vpn disconnect 하고, 원래 IP 를 메모리에 기록한다.
+
+# 프로그램 옵션. ( 아래 부분은 개발자만 수정 )
+spider api server: http://witheng.com/spider.php?auth=italkcenter
+
