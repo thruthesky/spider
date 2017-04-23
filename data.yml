@@ -64,14 +64,16 @@ login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 
 
 # 필리핀
 keyword: 마닐라
+vote: y
+url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=269688063&qb=66eI64uQ6528&enc=utf8&section=kin&rank=6&search_sort=0&spq=0
+# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274629037&qb=66eI64uQ6528&enc=utf8&section=kin&rank=10&search_sort=0&spq=0
 # url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274921238&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=5&search_sort=0&spq=0&pid=TnxtXwpySElssvJHpQGssssssKC-010638&sid=Q%2Bb3fbdcInUyoZA9Xnd4KA%3D%3D
 # url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274863626&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=6&search_sort=0&spq=0
 # url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=271155938&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=3&search_sort=0&spq=0&pid=TnyYQwpySpZssaUGTwdssssssSK-484304&sid=2aPQ%2BMg2dPjnkPIzkYFGCQ%3D%3D
 # url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=110803&docId=274988772&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=9&search_sort=0&spq=0
 # url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=273695987&qb=7ZWE66as7ZWAIOyXrO2WiQ==&enc=utf8&section=kin&rank=1&search_sort=0&spq=0
 # url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274216248&qb=7IS467aA&enc=utf8&section=kin&rank=9&search_sort=0&spq=0
-url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=271626967&qb=66eI64uQ6528&enc=utf8&section=kin&rank=3&search_sort=0&spq=0
-vote: y
+# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=271626967&qb=66eI64uQ6528&enc=utf8&section=kin&rank=3&search_sort=0&spq=0
 
 
 
