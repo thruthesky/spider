@@ -1,4 +1,4 @@
-# 프로그램 실행 옵션
+﻿# 프로그램 실행 옵션
 # -----------------
 #
 # 문제. ID 블럭이 큰 문제. ID 블럭이 이유가 100% "자동 프로그램" 때문만은 아니겠지만, "자동 프로그램"에 의해서 더 많이 일어나는 것은 사실인 것 같음.
@@ -53,19 +53,11 @@ login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 
 #           주의: 지식인 검색에서 해당 결과가 안나와도 된다. 검색 후, 클릭을 하면 새창이 열리기 때문에, 컨트롤이 안되어, 그냥 바로 URL 이동을 한다.
 #           만약, 검색어를 입력하지 않으면, 로그인 후, 곧 바로 공감하므로 '검색어'로 검색하는 경우 보다 빠르게 클릭을 할 수 있다.
 #
-# URL 형식: 각 라인의 첫번째 열(공백없이)에 y 또는 n (소문자) 을 기록하고,
-#       그 다음에 (공백없이) 콜론을 기록하고,
-#       한칸 공백을 두고,
-#       지식인 URL 을 기록한다.  
-#       예제)
-#           y: http://kin.naver.com/qna/detail.nhn?d1id=9&....%3D%3D
 
-# y: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=271155938&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=3&search_sort=0&spq=0
-
-# 필리핀
+# 
 keyword: 화상영어
 vote: n
-url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=11080305&docId=275029149&qb=7ZmU7IOB7JiB7Ja0&enc=utf8&section=kin&rank=3&search_sort=0&spq=0
+url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=11080305&docId=274168035&qb=7ZmU7IOB7JiB7Ja0&enc=utf8&section=kin&rank=10&search_sort=0&spq=0
 
 
 
