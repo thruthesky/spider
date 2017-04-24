@@ -9,7 +9,7 @@
 #
 # 초 단위 입력: 0.1 은 0.1 초. 1은 1초.
 #
-show window: n                # (y/n) 웹 페이지 창을 보일지 말지.
+show window: y                # (y/n) 웹 페이지 창을 보일지 말지. ( 아직 동작하지 않음. ID 블럭에 대한 방안 부터. )
 change ip: y                  # (y/n) IP 를 변경 할 지 말지를 결정한다. y 이면 변경한다. 이 때, HideMyAss 버전 2.x 가 설치되어야 한다.
 wait until ip change : 22     # (초) 인터넷 속도에 따라서 IP 가 늦게 변경 될 수 있으므로 충분한 (많은) 시간(약 30초에서 1분)이 필요. 'change ip' 가 'n' 이면 무시.
 # start after ip changed: y   # (y/n) 이 값이 y 이면, 'start after' 는 무시 됨. 'start after' 가 정확하지 않으므로 실행 속도가 느려 질 수 있는데, IP 변경되자 마자 최대한 빠르게 실행 가능하게 하는 것. 
@@ -50,7 +50,7 @@ login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 
 #             4. 지식인 이동
 #             5. "화상영어" 로 검색
 #             6. 해당 검색 결과에서 하나를 선택.
-#           주의: 지식인 검색에서 해당 결과가 안나오면, 공감이 안된다. 따라서 상세 검색을 해야한다. 예를 들면, "화상영어" 보다는 "화상영어업체"로 검색을 해야 한다.
+#           주의: 지식인 검색에서 해당 결과가 안나와도 된다. 검색 후, 클릭을 하면 새창이 열리기 때문에, 컨트롤이 안되어, 그냥 바로 URL 이동을 한다.
 #           만약, 검색어를 입력하지 않으면, 로그인 후, 곧 바로 공감하므로 '검색어'로 검색하는 경우 보다 빠르게 클릭을 할 수 있다.
 #
 # URL 형식: 각 라인의 첫번째 열(공백없이)에 y 또는 n (소문자) 을 기록하고,
@@ -63,18 +63,9 @@ login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 
 # y: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=271155938&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=3&search_sort=0&spq=0
 
 # 필리핀
-keyword: 마닐라
-vote: y
-url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=269688063&qb=66eI64uQ6528&enc=utf8&section=kin&rank=6&search_sort=0&spq=0
-# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274629037&qb=66eI64uQ6528&enc=utf8&section=kin&rank=10&search_sort=0&spq=0
-# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274921238&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=5&search_sort=0&spq=0&pid=TnxtXwpySElssvJHpQGssssssKC-010638&sid=Q%2Bb3fbdcInUyoZA9Xnd4KA%3D%3D
-# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274863626&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=6&search_sort=0&spq=0
-# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=271155938&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=3&search_sort=0&spq=0&pid=TnyYQwpySpZssaUGTwdssssssSK-484304&sid=2aPQ%2BMg2dPjnkPIzkYFGCQ%3D%3D
-# url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=110803&docId=274988772&qb=7ZWE66as7ZWA&enc=utf8&section=kin&rank=9&search_sort=0&spq=0
-# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=273695987&qb=7ZWE66as7ZWAIOyXrO2WiQ==&enc=utf8&section=kin&rank=1&search_sort=0&spq=0
-# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=274216248&qb=7IS467aA&enc=utf8&section=kin&rank=9&search_sort=0&spq=0
-# url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=271626967&qb=66eI64uQ6528&enc=utf8&section=kin&rank=3&search_sort=0&spq=0
-
+keyword: 화상영어
+vote: n
+url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=11080305&docId=275029149&qb=7ZmU7IOB7JiB7Ja0&enc=utf8&section=kin&rank=3&search_sort=0&spq=0
 
 
 
@@ -90,10 +81,12 @@ url: http://kin.naver.com/qna/detail.nhn?d1id=9&dirId=9020104&docId=269688063&qb
 center401: jjjEye272
 #prettyiyah: ontue4ever      # 스팸 게시물
 #sisigcorner: goodtalk1      # 타인 의심 로그인
-chillz88: goodtalk2
-italkitalk2: goodtalk1
-copungcopung: goodtalk3
+# chillz88: goodtalk2       # 타인 의심.
+# italkitalk2: goodtalk1    # 타인 의심.
+# copungcopung: goodtalk3   # 타인 의심.
 
+
+cai_8813: cai_111388
 
 
 

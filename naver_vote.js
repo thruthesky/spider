@@ -78,7 +78,7 @@ function doNightmare( user, callback ) {
     console.log("doNightmare for: ", user);
 
     var nightmare = Nightmare({
-        // openDevTools: { mode: '' },
+        //openDevTools: { mode: '' },
         show: true,
         x: appPosition.x,
         y: appPosition.y,
@@ -130,18 +130,37 @@ function doNightmare( user, callback ) {
         
     }
     else {
+        
         nightmare
             .type('input[name="id"]', user['id'])
             //.wait( getPause() )
             .type('input[name="pw"]', user['password'])
             //.wait( getPause() )
+            .click('input#ip_on').wait(2000)
             .click('input.btn_global')
+            // .evaluate( () => {
+            //     console.log("login level evaluate:");
+            //     var smart = document.querySelector("#smart_LEVEL");
+            //     var lv = smart.value;
+            //     console.log("smart_Level:", lv);
+            //     //if ( parseInt( lv ) == 1 ) smart.click();
+            //     return parseInt(lv);
+            // })
+            // .then( lv => {
+            //     console.log("then: lv: ", lv);
+            //     if ( lv == 1 ) {
+            //         console.log("going to click: Security Login: ");
+            //     }
+            // } );
+
+    }
+
+    nightmare
             .wait('body')
             .wait( 3000 )                        // 주의 : 'body' 태그가 나오자 마자 바로 evaluate 하면, .protection_content 가 없어서, 에러가 난다. 약 3 초 기다려, dom 이 모두 로드될 때 까지 야한다. 다른 좋은 방법을 찾기 어렵다.
-    }
-    nightmare
+
         .evaluate(() => {
-            console.log("evaluate");
+            console.log("evaluate for block:");
             var n = document.querySelectorAll('.protection_content').length;
             if ( n ) {
                 console.log("evaludate: after login: ", n);
@@ -183,7 +202,7 @@ function doNightmare( user, callback ) {
 
                 nightmare
                 .goto( getKinUrl() )                     // 해당 지식인 글로 바로 이동.
-                .wait(".u_likeit_layer").wait(100)              // 공감 찾기.
+                .wait(".u_likeit_layer").wait(1000)              // 공감 찾기.
                 .evaluate(() => {                               // 공감으로 스크롤.
                     var layer = document.querySelectorAll('.u_likeit_layer');
                     function position(elem) {
