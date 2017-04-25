@@ -132,11 +132,12 @@ function doNightmare( user, callback ) {
     else {
         
         nightmare
+            .wait('input[name="id"]').wait(1000)
             .type('input[name="id"]', user['id'])
             //.wait( getPause() )
             .type('input[name="pw"]', user['password'])
             //.wait( getPause() )
-            .click('input#ip_on').wait(2000)
+            //.click('input#ip_on')
             .click('input.btn_global')
             // .evaluate( () => {
             //     console.log("login level evaluate:");
@@ -183,10 +184,8 @@ function doNightmare( user, callback ) {
                 if ( data['config']['login'] == 'y' ) {
                     nightmare
                     .wait('.section_minime').wait( getPause() )                            // 로그인 완료
-                
                 }
-                
-
+                console.log("keyword: ", getKeyword() );
                 if ( getKeyword() ) {
                     nightmare
                         // 해당 지식인 검색해서 클릭하여 이동 ( 사람 처럼 ), 단 실제 검색 후 검색 결과에서 클릭하지 않음.
@@ -199,7 +198,7 @@ function doNightmare( user, callback ) {
                         // .wait( '[href*="'+ getDocId() +'"]' )
                         // .click( '[href*="'+ getDocId() +'"]' )
                 }
-
+                console.log("goto kin: ", getKinUrl());
                 nightmare
                 .goto( getKinUrl() )                     // 해당 지식인 글로 바로 이동.
                 .wait(".u_likeit_layer").wait(1000)              // 공감 찾기.
@@ -269,7 +268,8 @@ function getDocId() {
 }
 
 function getKeyword() {
-    return data['search']['keyword'];
+    if ( data['search']['keyword'] ) return data['search']['keyword'];
+    else return null;
 }
 function getKinUrl() {
     return data['search']['url'];

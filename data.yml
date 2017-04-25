@@ -11,13 +11,13 @@
 #
 show window: y                # (y/n) 웹 페이지 창을 보일지 말지. ( 아직 동작하지 않음. ID 블럭에 대한 방안 부터. )
 change ip: y                  # (y/n) IP 를 변경 할 지 말지를 결정한다. y 이면 변경한다. 이 때, HideMyAss 버전 2.x 가 설치되어야 한다.
-wait until ip change : 22     # (초) 인터넷 속도에 따라서 IP 가 늦게 변경 될 수 있으므로 충분한 (많은) 시간(약 30초에서 1분)이 필요. 'change ip' 가 'n' 이면 무시.
+wait until ip change : 28     # (초) 인터넷 속도에 따라서 IP 가 늦게 변경 될 수 있으므로 충분한 (많은) 시간(약 30초에서 1분)이 필요. 'change ip' 가 'n' 이면 무시.
 # start after ip changed: y   # (y/n) 이 값이 y 이면, 'start after' 는 무시 됨. 'start after' 가 정확하지 않으므로 실행 속도가 느려 질 수 있는데, IP 변경되자 마자 최대한 빠르게 실행 가능하게 하는 것. 
                               # 프로그램 내부적으로 vpn disconnect 하고, 원래 IP 를 메모리에 기록한다.
                               # 'change ip' 가 'n' 이면 무시.
                               # 아직 이 기능은 동작하지 않음. ID 블럭에 방안이 우선되어야 함.
 
-naver main page first: y  # (y/n) 'y' 이면, 로그인을 하기 전에 네이버 메인 페이지로 먼저 이동한다. 이것은 로봇이 아닌 사람이 직접 사용하는 것 처럼 보이게 하기 위한 것이다.
+naver main page first: n  # (y/n) 'y' 이면, 로그인을 하기 전에 네이버 메인 페이지로 먼저 이동한다. 이것은 로봇이 아닌 사람이 직접 사용하는 것 처럼 보이게 하기 위한 것이다.
 
 click pause: 1            # (초) 각 링크 클릭/페이지 이동 후/항목 입력 후 잠시 쉴 시간. 예: 아이디를 입력하고, 비밀번호 시작 입력하기 전까지 쉬는 시간. 예: 지식인 페이지를 이동한 다음에 공감을 클릭하기 전까지 대기 시간.
 scroll: y                 # (y/n) 웹 페이지 창을 보여 줄 때, 각 페이지에서 버튼이 있는 위치로 스크롤 할지, 말지.
@@ -55,12 +55,9 @@ login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 
 #
 
 # 
-keyword: 화상영어
-vote: n
-url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=11080305&docId=274168035&qb=7ZmU7IOB7JiB7Ja0&enc=utf8&section=kin&rank=10&search_sort=0&spq=0
-
-
-
+#keyword: 화상영어
+vote: y
+url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=11080305&docId=275198452&qb=7Ja066aw7J207ZmU7IOB7JiB7Ja0&enc=utf8&section=kin&rank=10&search_sort=0&spq=0
 # 네이버 사용자 아이디
 # -----------------
 # 형식: 각 라인 맨 첫 행에 아이디를 기록하고, 아이디 바로 다음에(공백없이) 콜론을 입력하고, 공백을 한칸 띄운 다음에 비밀번호를 입력한다.
@@ -76,9 +73,30 @@ center401: jjjEye272
 # chillz88: goodtalk2       # 타인 의심.
 # italkitalk2: goodtalk1    # 타인 의심.
 # copungcopung: goodtalk3   # 타인 의심.
-
-
+amazingdude: ontue4ever
 cai_8813: cai_111388
-
+horangbutterfly: talkgood6
+masarapsisig: goodtalk6
+rust0191: goodtalk6
+g4note4: goodtalk6
+awesomeiyah: ontue4ever
+chillzcoffee: goodtalk7
+heyiyah: ontue4ever
+hungryman00: ontue4ever
+karla_20: koreangrammarinu
+cunananalena: march102017
+sisigcorner: goodtalk1
+witheng4ever: ontue4ever
+bbakgosu: goodtalk5
+tatlois3: goodtalk5
+trikdriver: goodtalk4
+isais1: goodtalk4
+jellybeanne1995: francisco011995
+zatra_12: swishit5139
+catchme9876: ontue4ever
+louine01teacher99: one_01htlou
+sinigangtime: goodtalk1
+sisigcorner: goodtalk1
+msradidas: goodtalk4
 
 
