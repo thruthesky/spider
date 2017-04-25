@@ -9,7 +9,9 @@ var $ = require("jquery")( window );
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('spider.sqlite');
 
+// yamil data
 
+var data_yaml = "../angular-electron/data.yaml.txt";
 
 // http client
 var Client = require('node-rest-client').Client;
@@ -29,7 +31,7 @@ var data = loadYamlConfiguration();
 naverVote();
 
 function naverVote() {
-    if ( 1 ) changeIpAddress();     // changeIpAddress() => change ip => ipChanged()
+    if ( config('ip_change') == 'y' ) changeIpAddress();     // changeIpAddress() => change ip => ipChanged()
     else naverGetUser();
 }
 function ipChanged() {
@@ -53,14 +55,14 @@ function naverVoteSuccess( user ) {
 function naverOpen( user ) {
     console.log(`( ${user['id']} ) naverOpen() - Going to open login page`);
     var o = {
-        x: data['config']['app x'],
-        y: data['config']['app y'],
-        width: data['config']['app width'],
-        height: data['config']['app height'],
+        x: 800,
+        y: 0,
+        width: 1024,
+        height: 600,
         dock: true
     };
-    if ( data['config']['show window'] == 'y' ) o['show'] = true;
-    if ( data['config']['show devtool'] == 'y' ) o['openDevTools'] = { mode: '' };
+    if ( config('browser') == 'y' ) o['show'] = true;
+    if ( config('show_devtool') == 'y' ) o['openDevTools'] = { mode: '' };
 
     nightmare = Nightmare( o );
     
@@ -68,7 +70,7 @@ function naverOpen( user ) {
 
 
 
-    if ( data['config']['naver main page first'] == 'y' ) {
+    if ( config('visit_naver_main') == 'y' ) {
         nightmare
             .goto('http://www.naver.com')                       // 네이버 홈
             .click("#login .lg_global_btn")                     // 로그인 페이지로 클릭하여 이동
@@ -183,7 +185,9 @@ function naverOpenKinDocument( user ) {
     var vote = getVote();
     nightmare
         .goto( getKinUrl() )                     // 해당 지식인 글로 바로 이동.
-        .wait(".u_likeit_layer").wait(1000)              // 공감 찾기.
+    if ( config('vote_scroll') == 'y' ) {
+        nightmare
+        .wait(".u_likeit_layer").wait(getPause())              // 공감 찾기.
         .evaluate(() => {                               // 공감으로 스크롤.
             var layer = document.querySelectorAll('.u_likeit_layer');
             function position(elem) {
@@ -199,7 +203,10 @@ function naverOpenKinDocument( user ) {
             var p = position( layer[0] );
             // console.log("P: ", p);
             document.querySelector("body").scrollTop = p.top;
-        }).wait( getPause() )
+        });
+    }
+    nightmare
+        .wait( getPause() )
         .click("li." + vote + " a")              // 비/공감 클릭
         .wait( getPause() )                                 //
         // .wait( 10 * 1000 )
@@ -215,7 +222,7 @@ function naverOpenKinDocument( user ) {
 
 
 function getDocId() {
-    var url = data['search']['url'];
+    var url = config('document_url');
     var d = url.split('docId=');
     var n = d[1].split('&');
     // console.log(`Naver KIN Document ID:  ${n[0]}`);
@@ -223,21 +230,27 @@ function getDocId() {
 }
 
 function getKeyword() {
-    return data['search']['keyword'];
+    return config('keyword');
 }
 function getKinUrl() {
-    return data['search']['url'];
+    return config('document_url');
 }
 function getVote() {
-    var vote = data['search']['vote'];
+    var vote = config('vote');
     return vote == 'y' ? 'good' : 'adver';
 }
 function getPause() {
-    var pause = data['config']['click pause'] * 1000;
+    var pause = config('click_pause') * 1000;
     // console.log("getPuase(): ", pause);
     return pause;
 }
 
+function config( key ) {
+    if ( data && data['config'] && data['config'][key] ) return data['config'][key];
+    if ( data && data['search'] && data['search'][key] ) return data['search'][key];
+    console.log(`key: ${key} does not exists in configuration`);
+    process.exit();
+}
 
 
 function getUser() {
@@ -249,7 +262,9 @@ function getUser() {
 
     var user = { id: id, password: data['id'][id] };
     data.iUser ++;
-    console.log("getUser: ", user);
+    //console.log("getUser: ", user);
+    
+    console.log(`( ${user['id']} ) : begins ...`);
     return user;
 }
 
@@ -273,7 +288,7 @@ function checkIfVoted( user, alreadyVotedCallback, notVotedCallback ) {
             alreadyVotedCallback( user );
         }
         else {
-            console.log(`Going to vote: ${user['id']}`);
+            console.log(`( ${user['id']} ) : checkIfVoted() : Going to vote `);
             notVotedCallback( user );
         }
     });
@@ -283,7 +298,7 @@ function checkIfVoted( user, alreadyVotedCallback, notVotedCallback ) {
 function loadYamlConfiguration() {
     var yaml = require('js-yaml');
     var fs   = require('fs');
-    var str  = fs.readFileSync('data.yml').toString();
+    var str  = fs.readFileSync( data_yaml ).toString();
                                             // console.log( 'str: ', str);
     var arr  = str.split('# -----------------');
                                             // console.log(arr);
