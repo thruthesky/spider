@@ -6,13 +6,7 @@
 * npm install --verbose
 * node spider.js
 
-# How to pin with bat.
 
-
-1. Rename .bat to .exe 
-2. Right click .exe => Pin To Start
-3. Right click .exe => Rename to .bat
-4. Right click the shortcut => Property => Change target from .exe to .bat
 
 # TODO
 

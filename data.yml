@@ -24,11 +24,15 @@ scroll: y                 # (y/n) 웹 페이지 창을 보여 줄 때, 각 페�
 
 # typing speed: 0.1           # (초) 타이핑을 할 때, 키보드 버튼을 누르는 스피드.
                               # 아직 동작하지 않음.
-login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 할 때, 'n' 으로 하면 좋음.
+# login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 할 때, 'n' 으로 하면 좋음. ( 0.2 에서 없앰 )
 
 # 프로그램 옵션. ( 아래 부분은 개발자만 수정 )
 # spider api server: http://witheng.com/spider.php?auth=italkcenter   # 아직 동작하지 않음. ID 블럭에 대한 방안이 우선.
-
+show devtool: n     # 개발자 창 표시.
+app x: 1024             # 앱의 x 포지션
+app y: 0                # 앱의 y 포지션
+app width: 800          # 앱의 너비
+app height: 600         # 앱의 높이
 
 
 
@@ -55,9 +59,9 @@ login: y                      # (y/n) 로그인 할지 말지 결정. 테스트 
 #
 
 # 
-keyword: 화상영어
-vote: n
-url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=11080305&docId=274168035&qb=7ZmU7IOB7JiB7Ja0&enc=utf8&section=kin&rank=10&search_sort=0&spq=0
+keyword: 필리핀
+vote: y
+url: http://kin.naver.com/qna/detail.nhn?d1id=11&dirId=1115&docId=1733892873&qb=aW9uaWM=&enc=utf8&section=kin&rank=2&search_sort=0&spq=0
 
 
 
@@ -81,4 +85,5 @@ center401: jjjEye272
 cai_8813: cai_111388
 
 
+louine01teacher99: one_01htlou
 
